@@ -2,6 +2,13 @@
 #include <time.h>
 #include <stdio.h>
 
+/**
+ * main - Point d'entrée du programme
+ * Description : Génére un nombre aléatoire, puis affiche s’il est
+ *              positif, nul ou négatif.
+ * Return: Always 0 (Succès)
+ */
+
 int main(void)
 {
 	int n;
