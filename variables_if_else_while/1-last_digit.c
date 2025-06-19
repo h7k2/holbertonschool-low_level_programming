@@ -6,10 +6,10 @@
 int main(void)
 {
 	int n;
-	int Last digit of;
+	int Last_digit_of;
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
-	Last_digit_of = n % 10
+	Last_digit_of = n % 10;
 	if(Last_digit_of > 5)
 	{
 	printf("and is greater than 5\n");
