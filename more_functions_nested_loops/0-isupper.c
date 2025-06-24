@@ -2,9 +2,9 @@
 #include <stdio.h>
 
 /**
- * main - check the code.
+ * _isupper - check if a character is big
  *
- * Return: Always 0.
+ * Return 1 if AZ else 0
  */
 
 int _isupper(int c)
