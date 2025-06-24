@@ -3,7 +3,7 @@
 
 /**
  * _isupper - check if a character is big
- * @c: Charactere | verifie
+ * @c: Charactere | verifier
  *
  * Return 1 if AZ else 0
  */
