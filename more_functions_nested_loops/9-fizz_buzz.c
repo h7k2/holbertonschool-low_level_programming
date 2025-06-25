@@ -3,9 +3,9 @@
  * FizzBuzz project
  * 3 = Fizz
  * 5 = Buzz
- * 3 & 5 = FizzBuzz 
+ * 3 & 5 = FizzBuzz
  */
-int main (void)
+int main(void)
 {
 int i;
 	for (i = 1; i <= 100; i++)
