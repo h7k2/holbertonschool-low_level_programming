@@ -1,11 +1,9 @@
 #include<stdio.h>
 /**
- * fizz_buzz.c - Program that prints the numbers from 1 to 100.
- * For multiples of 3, it prints "Fizz".
- * For multiples of 5, it prints "Buzz".
- * For multiples of both 3 and 5, it prints "FizzBuzz".
- * Each output is separated by a space.
- * The program ends with a newline character.
+ * main - prints numbers from 1 to 100 replacing multiples of 3 with "Fizz",
+ * multiples of 5 with "Buzz", and multiples of both with "FizzBuzz".
+ *
+ * Return: Always 0 (success).
  */
 
 int main(void)
