@@ -1,10 +1,13 @@
 #include<stdio.h>
 /**
- * FizzBuzz project
- * 3 = Fizz
- * 5 = Buzz
- * 3 & 5 = FizzBuzz
+ * fizz_buzz.c - Program that prints the numbers from 1 to 100.
+ * For multiples of 3, it prints "Fizz".
+ * For multiples of 5, it prints "Buzz".
+ * For multiples of both 3 and 5, it prints "FizzBuzz".
+ * Each output is separated by a space.
+ * The program ends with a newline character.
  */
+
 int main(void)
 {
 int i;
