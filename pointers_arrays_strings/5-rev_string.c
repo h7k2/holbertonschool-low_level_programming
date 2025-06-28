@@ -13,7 +13,7 @@ void rev_string(char *s)
 	char temp;
 
 	while (s[i] != '\0')
-  {
+	{
 		i++;
   }
 	i--; /* Move i to the last character (not the null terminator) */
