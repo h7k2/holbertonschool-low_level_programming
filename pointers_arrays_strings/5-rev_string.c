@@ -19,7 +19,7 @@ void rev_string(char *s)
 	i--; /* Move i to the last character (not the null terminator) */
 
 	while (j < i)
-  {
+	{
 		temp = s[j];
 		s[j] = s[i];
 		s[i] = temp;
