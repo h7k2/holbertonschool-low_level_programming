@@ -6,9 +6,10 @@
  * @s2: second string
  * @n: number of bytes of s2 to concatenate
  *
- * Return: pointer to newly allocated memory containing s1 + first n bytes of s2
- * If malloc fails, returns NULL
- * If NULL is passed, treat as empty string
+ * Return: pointer to newly allocated memory containing s1 followed by
+ *         the first n bytes of s2, null-terminated.
+ *         If malloc fails, returns NULL.
+ *         If NULL is passed, treat it as an empty string.
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
