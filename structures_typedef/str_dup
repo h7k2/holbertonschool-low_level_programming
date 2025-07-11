@@ -1,29 +1,23 @@
 #include <stdlib.h>
 
-/**
- * str_dup - duplicates a string by allocating memory
- * @str: string to duplicate
- *
- * Return: pointer to duplicated string or NULL if fails
- */
 char *str_dup(const char *str)
 {
-	char *dup;
-	int i, len;
+	int i;
+	char *copy;
 
-	if (str == NULL)
+	if (!str)
 		return (NULL);
 
-	for (len = 0; str[len]; len++)
+	for (i = 0; str[i]; i++)
 		;
 
-	dup = malloc(sizeof(char) * (len + 1));
-	if (dup == NULL)
+	copy = malloc(i + 1);
+	if (!copy)
 		return (NULL);
 
-	for (i = 0; i < len; i++)
-		dup[i] = str[i];
-	dup[len] = '\0';
+	for (i = 0; str[i]; i++)
+		copy[i] = str[i];
+	copy[i] = '\0';
 
-	return (dup);
+	return (copy);
 }

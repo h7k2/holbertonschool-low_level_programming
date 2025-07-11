@@ -2,44 +2,32 @@
 #include <stdlib.h>
 
 /**
- * str_dup - duplicates a string by allocating memory
- * @str: string to duplicate
+ * new_dog - creates a new dog_t struct
+ * @name: dog's name
+ * @age: dog's age
+ * @owner: dog's owner
  *
- * Return: pointer to duplicated string or NULL if allocation fails
+ * Return: pointer to the new dog or NULL if malloc fails
  */
-
-char *str_dup(const char *str);
-
-/**
- * new_dog - creates a new dog_t struct with copies of name and owner
- * @name: name of the dog
- * @age: age of the dog
- * @owner: owner of the dog
- *
- * Description: Allocates memory for a new dog, copies the name and owner strings.
- * Returns NULL if any allocation fails.
- *
- * Return: pointer to the new dog_t struct, or NULL on failure
- */
-
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *dog;
-	char *name_copy, *owner_copy;
+	char *name_copy;
+	char *owner_copy;
 
 	dog = malloc(sizeof(dog_t));
-	if (dog == NULL)
+	if (!dog)
 		return (NULL);
 
 	name_copy = str_dup(name);
-	if (name != NULL && name_copy == NULL)
+	if (name && !name_copy)
 	{
 		free(dog);
 		return (NULL);
 	}
 
 	owner_copy = str_dup(owner);
-	if (owner != NULL && owner_copy == NULL)
+	if (owner && !owner_copy)
 	{
 		free(name_copy);
 		free(dog);
