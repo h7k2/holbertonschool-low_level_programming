@@ -1,6 +1,6 @@
 #include "dog.h"
 #include <stdlib.h>
-
+#include "str_dup.c"
 /**
  * new_dog - creates a new dog_t struct
  * @name: dog's name
