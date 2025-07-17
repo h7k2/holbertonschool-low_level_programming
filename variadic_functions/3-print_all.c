@@ -4,35 +4,35 @@
 
 /**
  * print_all - prints anything
- * @format: list of types of arguments
- *
- * Return: nothing
+ * @format: list of types of arguments passed to the function
  */
 void print_all(const char * const format, ...)
 {
 	va_list args;
 	unsigned int i = 0;
-	char *sep = "";
 	char *str;
-	char type;
+	char *sep = "";
 
 	va_start(args, format);
 
 	while (format && format[i])
 	{
-		type = format[i];
-
-		if (type == 'c' || type == 'i' || type == 'f' || type == 's')
+		if (format[i] == 'c' || format[i] == 'i' ||
+		    format[i] == 'f' || format[i] == 's')
 		{
 			printf("%s", sep);
-			type == 'c' && printf("%c", va_arg(args, int));
-			type == 'i' && printf("%d", va_arg(args, int));
-			type == 'f' && printf("%f", va_arg(args, double));
-			if (type == 's')
+
+			if (format[i] == 's')
 			{
 				str = va_arg(args, char *);
-				printf("%s", str ? str : "(nil)");
+				if (str == NULL)
+					str = "(nil)";
+				printf("%s", str);
 			}
+			(format[i] == 'c') && printf("%c", va_arg(args, int));
+			(format[i] == 'i') && printf("%d", va_arg(args, int));
+			(format[i] == 'f') && printf("%f", va_arg(args, double));
+
 			sep = ", ";
 		}
 		i++;
