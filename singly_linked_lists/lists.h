@@ -1,16 +1,20 @@
-#ifndef LIST_T_DEFINED
-#define LIST_T_DEFINED
+#ifndef LISTS_H
+#define LISTS_H
 
 #include <stddef.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
+#include <unistd.h>
 
 /**
-* struct list_s - singly linked list
-* @str: string data stored in the node
-* @len: length of the string
-* @next: points to the next node
-*
-* Description: singly linked list node structure
-*/
+ * struct list_s - singly linked list node structure
+ * @str: string - (malloc'ed string)
+ * @len: length of the string
+ * @next: points to the next node
+ *
+ * Description: Structure representing a node in a singly linked list
+ */
 typedef struct list_s
 {
 	char *str;
