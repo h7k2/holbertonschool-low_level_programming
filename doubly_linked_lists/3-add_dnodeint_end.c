@@ -2,41 +2,43 @@
 #include <stdlib.h>
 
 /**
- * add_dnodeint_end - adds a new node at the end of the list
- * @head: pointer to the head pointer of the list
- * @n: value to store in the new node
- * Return: address of the new element, or NULL if it failed
+ * add_dnodeint_end - adds a new node at the end of a dlistint_t list
+ * @head: double pointer to the head of the list
+ * @n: integer to store in the new node
+ *
+ * Return: address of the new node, or NULL if it failed
  */
 dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 {
-    dlistint_t *new_node;
-    dlistint_t *current;
+	dlistint_t *new_node;
+	dlistint_t *temp;
 
-    if (head == NULL)  /* Cette vérification est correcte */
-        return (NULL);
+	if (head == NULL)
+		return (NULL);
 
-    new_node = malloc(sizeof(dlistint_t));
-    if (new_node == NULL)
-        return (NULL);
+	new_node = malloc(sizeof(dlistint_t));
+	if (new_node == NULL)
+		return (NULL);
 
-    new_node->n = n;
-    new_node->next = NULL;
-    new_node->prev = NULL;
+	new_node->n = n;
+	new_node->next = NULL;
 
-    if (*head == NULL)
-    {
-        *head = new_node;
-        return (new_node);
-    }
+	if (*head == NULL)
+	{
+		/* The list is empty, new node becomes the head */
+		new_node->prev = NULL;
+		*head = new_node;
+		return (new_node);
+	}
 
-    current = *head;
+	/* Go to the last node */
+	temp = *head;
+	while (temp->next != NULL)
+		temp = temp->next;
 
-    while (current->next != NULL)
-        current = current->next;
+	/* Append the new node */
+	temp->next = new_node;
+	new_node->prev = temp;
 
-    current->next = new_node;
-    /* Erreur subtile ici : on oublie de relier le nouveau node à son prédécesseur */
-    /* new_node->prev = current; */ /* <- cette ligne est manquante exprès */
-
-    return (new_node);
+	return (new_node);
 }
